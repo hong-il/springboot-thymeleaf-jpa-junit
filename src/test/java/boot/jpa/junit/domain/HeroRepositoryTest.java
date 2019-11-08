@@ -10,6 +10,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.time.LocalDateTime;
+
+import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.*;
 
 @RunWith(SpringRunner.class)
@@ -41,5 +43,21 @@ public class HeroRepositoryTest {
         //then
         assertTrue(output.getCreatedDate().isAfter(now));
         assertTrue(output.getModifiedDate().isAfter(now));
+    }
+
+    @Test
+    public void HeroSaveRequestTest() {
+        //given
+        Hero input = Hero.builder()
+                .name("github.com/hong-il")
+                .age(26)
+                .note("github.com/hong-il")
+                .build();
+
+        //when
+        Hero output = heroRepository.save(input);
+
+        //then
+        assertThat(input, is(output));
     }
 }
