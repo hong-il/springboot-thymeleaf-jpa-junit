@@ -126,4 +126,20 @@ public class HeroRepositoryTest {
         assertTrue(output.getModifiedDate()
                 .isAfter(input.getModifiedDate()));
     }
+
+    @Test
+    public void HeroDeleteRequest() {
+        //given
+        heroRepository.save(Hero.builder()
+                .name("github.com/hong-il")
+                .age(26)
+                .note("github.com/hong-il")
+                .build());
+
+        //when
+        heroRepository.deleteById(1L);
+
+        //then
+        assertNull(heroRepository.findById(1L).orElse(null));
+    }
 }
