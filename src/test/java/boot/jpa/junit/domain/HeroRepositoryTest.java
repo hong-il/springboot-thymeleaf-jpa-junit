@@ -79,4 +79,51 @@ public class HeroRepositoryTest {
         //then
         assertThat(output.size(), is(10));
     }
+
+    @Test
+    public void HeroFindByIdResponseTest() {
+        //given
+        Hero input = Hero.builder()
+                .name("github.com/hong-il")
+                .age(26)
+                .note("github.com/hong-il")
+                .build();
+
+        heroRepository.save(input);
+
+        //when
+        Hero output = heroRepository.findById(1L).orElse(null);
+
+        //then
+        assertThat(input.getName(), is(output.getName()));
+        assertThat(input.getAge(), is(output.getAge()));
+        assertThat(input.getNote(), is(output.getNote()));
+    }
+
+    @Test
+    public void HeroUpdateRequestTest() {
+        //given
+        Hero input = Hero.builder()
+                .name("temp")
+                .age(0)
+                .note("temp")
+                .build();
+
+        heroRepository.save(input);
+
+        //when
+        heroRepository.save(Hero.builder()
+                .id(1L)
+                .name("github.com/hong-il")
+                .age(26)
+                .note("github.com/hong-il")
+                .build());
+
+        //then
+        Hero output = heroRepository.findById(1L).orElse(null);
+        assertThat(input.getId(), is(output.getId()));
+        assertThat(input.getCreatedDate(), is(output.getCreatedDate()));
+        assertTrue(output.getModifiedDate()
+                .isAfter(input.getModifiedDate()));
+    }
 }
