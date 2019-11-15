@@ -1,10 +1,7 @@
 package boot.jpa.junit.dto;
 
 import boot.jpa.junit.domain.hero.Hero;
-import lombok.AccessLevel;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 @Getter
 @Setter
@@ -23,5 +20,13 @@ public class HeroUpdateRequestDto {
                 .age(age)
                 .note(note)
                 .build();
+    }
+
+    @Builder
+    public HeroUpdateRequestDto(Long id, String name, int age, String note) {
+        this.id = id;
+        this.name = name;
+        this.age = age;
+        this.note = note;
     }
 }

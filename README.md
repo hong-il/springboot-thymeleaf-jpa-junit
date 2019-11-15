@@ -7,7 +7,7 @@
 </details>
   
 # JUnit project for Spring boot
-I will test functions of the crud project with JUnit5.  
+I will test functions of the crud project with JUnit.  
 The table of contents is as follows.  
 1. [Create, Read, Update and Delete](https://github.com/hong-il/springboot-thymeleaf-jpa-crud)
 2. [JUnit Test](https://github.com/hong-il/springboot-thymeleaf-jpa-junit)

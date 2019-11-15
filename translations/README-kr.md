@@ -7,7 +7,7 @@
 </details>
   
 # 스프링부트 JUnit 튜토리얼
-JUnit5를 통해 지난 시간에 만든 함수들의 테스트 코드를 작성합니다.  
+JUnit을 통해 지난 시간에 만든 함수들의 테스트 코드를 작성합니다.  
 목차는 다음과 같습니다.  
 1. [Create, Read, Update and Delete](https://github.com/hong-il/springboot-thymeleaf-jpa-crud)
 2. [JUnit Test](https://github.com/hong-il/springboot-thymeleaf-jpa-junit)

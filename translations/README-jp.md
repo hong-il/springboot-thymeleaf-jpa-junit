@@ -7,7 +7,7 @@
 </details>
   
 ## スプリング・ブートのJUnitチュートリアル
-JUnit5でCrudプロジェクトのテストコードを書きます。   
+JUnitでCrudプロジェクトのテストコードを書きます。   
 目次は下記の通りです。  
 1. [Create, Read, Update and Delete](https://github.com/hong-il/springboot-thymeleaf-jpa-crud)
 2. [JUnit Test](https://github.com/hong-il/springboot-thymeleaf-jpa-junit)
